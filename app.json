@@ -1,0 +1,56 @@
+{
+  "name": "URL-Uploader",
+  "description": "An url uploader bot with permenent thumbnail support",
+  "keywords": [
+    "telegram",
+    "url",
+    "uploader",
+    "pyrogram"
+  ],
+  "success_url": "https://github.com/TR-TECH-GUIDE",
+  "website": "https://trtechguide.wordpress.com",
+  "repository": "https://github.com/TR-TECH-GUIDE/URL-Uploader",
+  "env": {
+    "WEBHOOK": {
+      "description": "Leave this as it is!",
+      "value": "ANYTHING"
+    },
+    "BOT_TOKEN": {
+      "description": "Your bot token from @botfather, as a string."
+    },
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org"
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org"
+    },
+    "AUTH_USERS": {
+      "description": "allow only pre-defined users to use this bot"
+    },
+    "TIME_LIMIT": {
+      "description": "Set timeout for subprocess (In seconds)",
+      "value": "0"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+        "options": {
+          "version": "12"
+        }
+      }
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
